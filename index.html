@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>js play</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="js-play.js"></script>
+  </head>
+  <style></style>
+  <body>
+    <nav>
+      <ul>
+        <li>JS-play</li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <h1>Welcome to js-play</h1>
+    <p>I'm just playing around with some javaScript here.</p>
+
+    <p><button onclick="myMove()">Click Me</button></p>
+
+    <div id="container">
+      <div id="animate"></div>
+    </div>
+
+    <script>
+      function myMove() {
+        var elem = document.getElementById('animate');
+        var pos = 0;
+        var id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
